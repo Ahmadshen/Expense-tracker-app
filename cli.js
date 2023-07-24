@@ -6,7 +6,9 @@ const { addExpense, getAllExpenses, deleteExpense } = require('./expenseModel');
 
 
 // MongoDB connection URI (replace with your actual MongoDB URI)
-const MONGODB_URI = 'mongodb://localhost:27017';
+const MONGODB_URI = '// cli.js
+const MONGODB_URI = 'mongodb://127.0.0.1:27017/expense-tracker-db';
+';
 
 // Connect to MongoDB
 mongoose.connect(MONGODB_URI, {
