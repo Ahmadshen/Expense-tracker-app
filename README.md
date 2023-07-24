@@ -50,3 +50,12 @@ The Expense Tracker App is a web-based application designed to help users track 
    ```bash
    git clone https://github.com/your-username/expense-tracker.git
    cd expense-tracker
+
+Install dependencies:
+ ```bash
+npm install
+
+### Setting Up the Database
+Create a MongoDB database either locally or on MongoDB Atlas.
+Set the MongoDB connection URI in the .env file:
+
