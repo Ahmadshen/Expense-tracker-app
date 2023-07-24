@@ -20,7 +20,7 @@ The Expense Tracker App is a web-based application designed to help users track 
 
 - User-friendly interface for tracking expenses.
 - Create, read, update, and delete expenses with ease.
-- Multi-platform support - Web, Mobile, Desktop, and Command Line.
+- Multi-platform support - Web, Mobile, Desktop, and Command-Line.
 - Secure authentication and authorization for user accounts.
 - Real-time synchronization across different platforms.
 - Comprehensive reporting and insights on spending patterns.
@@ -31,8 +31,6 @@ The Expense Tracker App is a web-based application designed to help users track 
 - Express.js
 - MongoDB with Mongoose
 - Auth0 for Authentication and Authorization
-- React (for web and mobile apps)
-- Electron (for desktop app)
 - Commander.js (for command line app)
 - Docker (for containerization)
 - AWS EC2 (for deployment)
