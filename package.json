@@ -1,0 +1,22 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "An Expense Tracker App",
+  "main": "index.js",
+  "bin": {
+    "expense-cli": "./cli.js"
+  },
+  "dependencies": {
+    "commander": "^7.2.0",
+    "mongoose": "^6.1.5"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start-web": "node index.js",
+    "start-mobile": "node index.js",
+    "start-desktop": "node index.js",
+    "start-cli": "node cli.js"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
