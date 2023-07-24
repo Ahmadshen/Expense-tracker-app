@@ -1,0 +1,56 @@
+const mongoose = require('mongoose');
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+mongoose.connect('mongodb://127.0.0.1:27017//expense-tracker-db', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const expenseSchema = new mongoose.Schema({
+  description: String,
+  amount: Number,
+});
+
+const Expense = mongoose.model('Expense', expenseSchema);
+
+// Your CRUD operations using Expense model go here
+
+app.use(express.static('public'));
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://127.0.0.1:${PORT}`);
+});
+
+
+// ... (Existing code)
+
+// Create a new expense in the database
+app.post('/expenses', (req, res) => {
+  const { description, amount } = req.body;
+  const newExpense = new Expense({ description, amount });
+
+  newExpense.save((err, savedExpense) => {
+    if (err) {
+      console.error('Error saving expense:', err);
+      return res.status(500).json({ error: 'Failed to save expense' });
+    }
+    res.status(201).json(savedExpense);
+  });
+});
+
+// Delete an expense from the database
+app.delete('/expenses/:id', (req, res) => {
+  const expenseId = req.params.id;
+
+  Expense.findByIdAndDelete(expenseId, (err, deletedExpense) => {
+    if (err) {
+      console.error('Error deleting expense:', err);
+      return res.status(500).json({ error: 'Failed to delete expense' });
+    }
+    res.status(200).json(deletedExpense);
+  });
+});
+
+// ... (Existing code)
